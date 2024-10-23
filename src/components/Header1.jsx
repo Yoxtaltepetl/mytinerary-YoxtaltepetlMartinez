@@ -1,6 +1,12 @@
 import logo from "../assets/logo.png";
 import acceso from "../assets/acceso.png";
 import menu from "../assets/menu.png";
+import { NavLink } from "react-router-dom";
+
+const routes = [
+  {to: '/' , text: "Home"},
+  {to: '/cities', text: "Cities"}
+];
 
 export default function Header() {
   function openMenu() {
@@ -27,15 +33,12 @@ export default function Header() {
             className="md:flex hidden flex-grow justify-between absolute mt-2 md:relative md:top-0 top-8 left-0 bg-gray-800 w-full md:w-auto items-center h-auto"
           >
             <div className="flex flex-col md:flex-row justify-center items-center">
-              <a href="#hero" className="text-white md:mr-7 mb-3">
-                Home
-              </a>
-              <a href="#cities" className="text-white md:mr-7 mb-3">
-                Cities
-              </a>
-              <a href="#carousel" className="text-white md:mr-7 mb-3">
-                Popular Mytineraries
-              </a>
+              {routes.map((route, index) => (
+                <NavLink key={index} to={route.to} className={({isActive}) => isActive? "text-rose-600 md:mr-7 mb-3":"text-white md:mr-7 mb-3"}>
+                {route.text}
+              </NavLink>
+              ))}
+             
             </div>
           </div>
 

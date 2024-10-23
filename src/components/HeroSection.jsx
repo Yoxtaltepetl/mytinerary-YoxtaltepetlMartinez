@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 export default function HeroSection() {
   return (
     <section id="hero" className="hero relative bg-[url(https://aeromexico.com/cms/sites/default/files/blogdeviajes_acapulco01.jpg)] bg-cover bg-center bg-no-repeat"
@@ -23,9 +25,9 @@ export default function HeroSection() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4 text-center">
-            <a href="#cities" className="w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring sm:w-auto">
+            <NavLink to="/cities" className="w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring sm:w-auto">
               Get Started
-            </a>
+            </NavLink>
 
             <a href="#carousel" className=" w-full rounded bg-white px-12 py-3 text-sm font-medium text-rose-600 shadow hover:text-rose-700 focus:outline-none focus:ring sm:w-auto">
               Popular

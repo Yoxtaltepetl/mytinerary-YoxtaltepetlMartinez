@@ -117,7 +117,7 @@ export default function MyTinerary() {
               <div className="content absolute top-1/2 text-left">
                 <h2 className="name text-rose-600 font-bold uppercase">{item.name}</h2>
                 <p className="des max-md:w-3/4 max-lg:w-2/4 p-3 font-extrabold text-white ">{item.description}</p>
-                <button className="bg-rose-600 cursor-pointer">See More</button>
+                <a href="/cities" className="bg-rose-600 cursor-pointer p-3">See More</a>
               </div>
             </div>
           ))}
