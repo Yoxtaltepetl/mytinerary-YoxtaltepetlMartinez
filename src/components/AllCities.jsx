@@ -7,7 +7,6 @@ export default function Cities() {
 
   const [cities, setCities] = useState([]);
   const [text, setText] = useState("");
-  console.log(text);
   let url = `http://localhost:8080/api/cities/all?name=${text}`;
 
   useEffect(() => {

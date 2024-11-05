@@ -1,29 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
-function ItineraryCards(city) {
-
-    const {name} = city.city;
-    console.log(name);
-    const [itineraries, setItineraries] = useState([]);
-
-    let url = `http://localhost:8080/api/itineraries/city/${name}`
-
-    useEffect(() => {
-        const data = async () => {
-            try {
-                const response = await fetch(url);
-                const dataResponse = await response.json();
-                console.log(dataResponse);
-                
-                setItineraries(dataResponse.res)
-            } catch (error) {
-                console.log(error);
-                
-            }
-        }
-        data();
-        
-    }, [url])
+function ItineraryCards({itineraries}) {
+    const {_id, name, photo, price, duration, likes, hashtags} = itineraries
+    console.log(itineraries);
 
    function itinerary(){
     return itineraries.map((e) => (
@@ -34,7 +13,7 @@ function ItineraryCards(city) {
   return (
     <>
     <div className="flex flex-wrap gap-1 mx-6 pb-4 contentCard justify-center bg-gray-800">
-        {itineraries.length !== 0 ? itinerary() : NoItinerary()}
+        {itineraries.length == 0 ? NoItinerary() : itinerary(_id, name, photo, price, duration, likes, hashtags)}
     </div>
    
     </>
@@ -93,17 +72,4 @@ function NoItinerary(){
 
 
 
-
-// eslint-disable-next-line react/prop-types
-function Modal() {
-
-
-
-  return (
-    <>
-    
-    </>
-  )
-}
-
-export {ItineraryCards, ItineraryCard, NoItinerary, Modal}
+export {ItineraryCards, ItineraryCard, NoItinerary}
