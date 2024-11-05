@@ -3,9 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 function Trip({ cities }) {
   const city = cities;
-  console.log(city.length);
-  
- 
+
   const navigate = useNavigate();
 
   function navigateParams(id){
