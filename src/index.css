@@ -27,6 +27,11 @@
     font-weight: 500;
     font-style: normal;
  }
+ 
+ .sign{
+
+    height: 86vh;
+ }
 .containerCard{
     transform: translate(-50%, -50%);
     background: #f5f5f5;

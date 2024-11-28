@@ -5,7 +5,9 @@ import { NavLink } from "react-router-dom";
 
 const routes = [
   {to: '/' , text: "Home"},
-  {to: '/cities', text: "Cities"}
+  {to: '/cities', text: "Cities"},
+  {to: '/singup', text: "Sing Up"},
+  {to: '/singin', text: "Sing In"}
 ];
 
 export default function Header() {
